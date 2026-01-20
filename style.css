@@ -1,0 +1,16 @@
+body {
+  font-family: Arial;
+  text-align: center;
+  background: #111;
+  color: white;
+}
+
+img {
+  width: 400px;
+  margin: 20px;
+}
+
+input {
+  width: 300px;
+  padding: 10px;
+}
