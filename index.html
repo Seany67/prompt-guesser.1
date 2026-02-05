@@ -1,19 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Prompt Guesser</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <main class="app">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">AI Prompt Guesser</p>
+        <h1>Guess the prompt behind the image.</h1>
+        <p class="subhead">Type the text you think generated the image. We score you based on matching keywords, style, and mood.</p>
+      </div>
+      <div class="scoreboard">
+        <div>
+          <span class="label">Round</span>
+          <span id="round" class="value">1</span>
+        </div>
+        <div>
+          <span class="label">Best Score</span>
+          <span id="bestScore" class="value">0%</span>
+        </div>
+      </div>
+    </header>
 
-  <h1>Guess the Prompt</h1>
+    <section class="panel">
+      <div class="image-frame">
+        <img src="image1.jpg.png" id="gameImage" alt="AI generated scene" />
+      </div>
+      <div class="prompt-panel">
+        <h2>What prompt was used?</h2>
+        <textarea id="guess" placeholder="Example: a golden retriever wearing sunglasses at the beach, cinematic lighting"></textarea>
+        <div class="actions">
+          <button id="submit">Submit Guess</button>
+          <button class="ghost" id="hint">Reveal a Hint</button>
+          <button class="ghost" id="skip">Skip</button>
+        </div>
+        <div class="feedback" id="feedback">
+          <p class="score" id="score">Score: 0%</p>
+          <p id="message">Start by typing your best prompt guess.</p>
+          <p class="reveal" id="reveal"></p>
+        </div>
+      </div>
+    </section>
 
-  <img src="image1.jpg" id="gameImage">
-
-  <input type="text" id="guess" placeholder="Type your prompt guess">
-  <button onclick="submitGuess()">Submit</button>
-
-  <p id="score"></p>
+    <section class="history">
+      <h3>Guess History</h3>
+      <ul id="history"></ul>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
